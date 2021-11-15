@@ -75,7 +75,11 @@ document.querySelector(".btn").addEventListener("click", evt =>
     }
     else
     {
-        btn.innerHTML = 'Sending...';
+        // This is the only error message that can be "corrected" by changing another input field,
+        // and so we need this hard-coded here to cover all cases
+        pwdc.nextElementSibling.innerHTML = "";
+
+        btn.innerHTML = 'Creating Account...';
 
         fname.name = "to_name";
         email.name = "to_email";
@@ -85,7 +89,7 @@ document.querySelector(".btn").addEventListener("click", evt =>
 
         emailjs.sendForm(serviceID, templateID, form)
             .then(() => {
-            btn.innerHTML = 'Sign Up';
+            btn.innerHTML = 'Email Sent!';
             btn.nextElementSibling.innerHTML = "Signed Up Successfully!";
             }, (err) => {
             btn.innerHTML = 'Whoops!';
