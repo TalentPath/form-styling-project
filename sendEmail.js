@@ -62,7 +62,6 @@ document.querySelector(".btn").addEventListener("click", evt =>
     {
         inputArr.forEach(item=> {
                 if (item.value === "") item.nextElementSibling.innerHTML = errMap.get(item);
-                else item.nextElementSibling.innerHTML = "";
         });
     }
     else if (checkEmail())
@@ -92,8 +91,8 @@ document.querySelector(".btn").addEventListener("click", evt =>
             btn.innerHTML = 'Email Sent!';
             btn.nextElementSibling.innerHTML = "Signed Up Successfully!";
             }, (err) => {
-            btn.innerHTML = 'Whoops!';
-            alert(JSON.stringify(err));
+                email.nextElementSibling.innerHTML = "Please enter a valid email address!";
+                btn.innerHTML = "Sign Up";
             });
-            }
+        }
 });
