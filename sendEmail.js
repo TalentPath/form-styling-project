@@ -25,7 +25,6 @@ function main()
     pwd = form.children[3].children[1];
     pwdc = form.children[4].children[1];
     btn = form.children[5];
-    btn.nextElementSibling.innerHTML = "";
 
     inputArr = [fname, lname, email, pwd, pwdc];
 
