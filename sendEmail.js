@@ -57,6 +57,8 @@ document.addEventListener("DOMContentLoaded", main);
 document.querySelector(".btn").addEventListener("click", evt =>
 {
     evt.preventDefault();
+    btn.nextElementSibling.innerHTML = "";
+
     if (anyFieldsEmpty())
     {
         inputArr.forEach(item=> {
