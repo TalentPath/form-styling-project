@@ -1,84 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,600');
+
+:root {
+  --poppins: 'Poppins', sans-serif;
+  --super-light: #F4F6F7;	
+  --blue: #169ad3;
+  --grey-medium: #727476;	
+  --grey-dark: #404040;
+  --background-image: url(https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80);
+}
+
+
 * {
-    /* 
-    -May want to add "border-box for "box-sizing so padding does not affect width
-    -Reset margin and padding 
-   */
+   margin: 0;
+   font-family: var(--poppins);
+   font-weight: 400;
   }
 
   body {
-    /* 
-      -Background color is #344a72
-    */
+    background: var(--background-image) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: var(--grey-dark);
+  }
+
+  h1 {
+    margin: 10px;
   }
 
   a {
-    /* 
-    Underlined links are ugly :)
-   */
+    text-decoration: none;
+    color: var(--blue)
   }
 
+
   #container {
-    /* 
-    -Remember, margin: auto on left and right will center a block element 
-    -I would also set a "max-width" for responsiveness
-    -May want to add some padding
-    */
+    width: 100%;
+    max-width: 600px;
+    min-width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--super-light);
+    text-align: center;
+    padding: 20px;
+    opacity: .87;
   }
 
   .form-wrap {
-    /* 
-      This is the white area around the form and heading, etc
-    */
+
   }
+
+  form { margin-top: 25px}
 
   .form-wrap h1,
   .form-wrap p {
-    /* 
-      May want to center these
-    */
+   margin: 10px 0 10px 0;
   }
 
   .form-wrap .form-group {
-    /* 
-      Each label, input is wrapped in .form-group
-    */
+    margin: 5px auto; 
+  }
+
+  .form-wrap .form-group:hover i {
+    color: var(--blue);
+  }
+
+  .form-wrap .form-group i {
+    color: var(--grey-medium);
+    display: inline-block;
   }
 
   .form-wrap .form-group label {
-    /* 
-      Label should be turned into a block element
-    */
+    display: inline-block;
+    text-align: right;
+    width: 200px;
+    margin: 0 15px 0 -55px;
   }
 
   .form-wrap .form-group input {
-    /* 
-      Inputs should reach accross the .form-wrap 100% and have some padding
-    */
+    display: inline-block;
+    width: 40%;
+    min-width: 250px;
+    border: none;
+    padding: 5px;
+    margin: 1px 5px;
   }
 
   .form-wrap button {
-    /* 
-      Button should wrap accross 100% and display as block
-      Background color for button is #49c1a2
-    */
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 25px 10px 15px 10px; 
+    transition: .2s;
+    border: 2px solid var(--blue);
   }
 
   .form-wrap button:hover {
     /* 
       Hover background color for button is #37a08e
     */
+    background: var(--super-light);
+    border: 2px solid var(--blue);
+    color: var(--grey-medium);
   }
 
   .form-wrap .bottom-text {
-    /* 
-      Bottom text is smaller
-    */
+    margin: 15px;
   }
 
   footer {
-    /* 
-    Should be centered
-   */
+    margin: 15px;
   }
 
   footer a {
@@ -86,3 +121,14 @@
       Footer link color is #49c1a2
     */
   }
+
+  .msg {
+    padding: 10px;
+    margin: 20px 15px;
+    border: 1px solid grey;
+    display: none;
+    width: auto;
+  }
+
+  #errorMsg { color: red; }
+  #successMsg { color: green; }
